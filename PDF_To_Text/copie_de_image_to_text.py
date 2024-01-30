@@ -136,71 +136,9 @@ class extraction :
       execution_time = end - start
       print(f"l'algo a pris {execution_time} secondes")
 
-"""Execution"""
-
-test=extraction('/content/drive/MyDrive/ProjetS2D/CRradio.pdf') # Insérer le nom de pdf, avant fait glisser le document dans la zone fichier à gauche
-
-test.export_lignes('/content/drive/MyDrive/ProjetS2D/CRradio_output.txt')
-
-test.extraction_time()
-
-test.show_bounding_boxes()
-
-# Exemple d'utilisation
-image_path = "/content/drive/MyDrive/ProjetS2D/CRradio.pdf"
-extractor = extraction(image_path)
-corps_texte = extractor.detecter_corps_texte()
-print(corps_texte)
-
-"""spelling"""
-
-pip install spellchecker
-
-from symspellpy import SymSpell, Verbosity
-langue='fr'
-prefix_length=7
-distance_max=2
-sym_spell = SymSpell(max_dictionary_edit_distance=distance_max, prefix_length=7)
-phrase = "Je veux acheterr unn nouvel voiture."
-
-# Charger le dictionnaire français
-dictionnaire_path = f"chemin/vers/le/dictionnaire/{langue}.txt"
-sym_spell.load_dictionary(dictionnaire_path, term_index=0, count_index=1)
-
-# Corriger les mots mal orthographiés dans la phrase
-suggestions = sym_spell.lookup_compound(phrase, max_edit_distance=distance_max)
-
-# Reconstruire la phrase corrigée
-phrase_corrigee = suggestions[0].term if suggestions else phrase
 
 
-# Exemple d'utilisation
-phrase_corrigee
-print("Phrase corrigée:", phrase_corrigee)
 
-suggestions
-
-from symspellpy import SymSpell, Verbosity
-
-def correction_orthographique(phrase, langue='fr', distance_max=2):
-    sym_spell = SymSpell(max_dictionary_edit_distance=distance_max, prefix_length=7)
-
-    # Charger le dictionnaire français
-    dictionnaire_path = f"chemin/vers/le/dictionnaire/{langue}.txt"
-    sym_spell.load_dictionary(dictionnaire_path, term_index=0, count_index=1)
-
-    # Corriger les mots mal orthographiés dans la phrase
-    suggestions = sym_spell.lookup_compound(phrase, max_edit_distance=distance_max)
-
-    # Reconstruire la phrase corrigée
-    phrase_corrigee = suggestions[0].term if suggestions else phrase
-
-    return phrase_corrigee
-
-# Exemple d'utilisation
-phrase_entree = "Je veux acheterr unn nouvel voiture."
-phrase_corrigee = correction_orthographique(phrase_entree, langue='fr')
-print("Phrase corrigée:", phrase_corrigee)
 
 
 
