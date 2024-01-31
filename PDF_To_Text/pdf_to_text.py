@@ -10,15 +10,15 @@ Initialisation/ Installation
 """
 
 #installing doctr
-!pip install python-doctr[torch]
+#!pip install python-doctr[torch]
 # Restart runtime
-exit()
+#exit()
 
-!sudo apt install libcairo2-dev pkg-config
-!pip3 install pycairo
-exit()
+# !sudo apt install libcairo2-dev pkg-config
+# !pip3 install pycairo
+# exit()
 
-pip install tf2onnx
+# pip install tf2onnx
 
 import os
 os.environ['USE_TORCH'] = '1'
@@ -28,7 +28,7 @@ from doctr.io import DocumentFile
 from doctr.models import ocr_predictor
 import time
 
-class extraction :
+class Extraction :
     '''
         Cette classe a comme but principal d'extraire les lignes à partir d'une image. En effet,
         il nous permet de telcharger un fichier contenant les lignes extraites
