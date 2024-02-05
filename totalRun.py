@@ -2,6 +2,7 @@
 import os
 
 from PDF_To_Text.pdf_to_text import Extraction
+from CR.CR import extraction_CR_main
 #extracteur=Extraction("C:\Users\zaiss\OneDrive\Documents\GitHub\Projet_S2D\P0001\PDF\CRradio.pdf") # Insérer le nom de pdf, avant fait glisser le document dans la zone fichier à gauche
 #export_lignes_fichier = extracteur.export_lignes("C:\Users\zaiss\OneDrive\Documents\GitHub\Projet_S2D\P0001\Text\CRradio.txt")
 
@@ -30,3 +31,14 @@ for filename in os.listdir(input_directory):
 
         # Exportation des lignes dans le fichier texte
         extracteur.export_lignes(txt_filepath)
+print("######### Fin OCR ################")
+# Compte rendu traitement
+for filename in os.listdir(output_directory):
+    if "cr" in filename.lower():
+        chemin_du_fichier = os.path.join(output_directory, filename) 
+        caract_debut=input("entrez le premier mot du titre du compte rendu:")
+        caract_fin=input("entrez le premier mot du pied du compte rendu:")
+        dict_CR=extraction_CR_main(chemin_du_fichier,caract_fin,caract_debut)
+print(dict_CR)
+
+
