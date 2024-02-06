@@ -3,9 +3,10 @@ import os
 
 from PDF_To_Text.pdf_to_text import Extraction
 from CR.CR import extraction_CR_main
+from Ordonnance.Data_Extraction import extract_prescription
+
 #extracteur=Extraction("C:\Users\zaiss\OneDrive\Documents\GitHub\Projet_S2D\P0001\PDF\CRradio.pdf") # Insérer le nom de pdf, avant fait glisser le document dans la zone fichier à gauche
 #export_lignes_fichier = extracteur.export_lignes("C:\Users\zaiss\OneDrive\Documents\GitHub\Projet_S2D\P0001\Text\CRradio.txt")
-
 
 
 # Remplacez "Extraction" par le nom de votre classe
@@ -35,10 +36,39 @@ print("######### Fin OCR ################")
 # Compte rendu traitement
 for filename in os.listdir(output_directory):
     if "cr" in filename.lower():
+        print("----------début traitement compte rendu -----------")
         chemin_du_fichier = os.path.join(output_directory, filename) 
         caract_debut=input("entrez le premier mot du titre du compte rendu:")
         caract_fin=input("entrez le premier mot du pied du compte rendu:")
         dict_CR=extraction_CR_main(chemin_du_fichier,caract_fin,caract_debut)
-print(dict_CR)
+        print("----------Fin traitement compte rendu ---------------")
+        print(dict_CR)
+    if "ordo" in filename.lower():
+        print("----------début traitement ordonance ----------------")
+        output_file_path=os.path.join(output_directory, filename) 
+        text = None
+        try:
+            with open(output_file_path, 'r', encoding="windows-1252") as output_file:
+                text = output_file.read()
+                print(text)
+        except FileNotFoundError:
+            print(f"File '{output_file_path}' not found.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
+
+        # Extraire la prescription
+        prescription= extract_prescription(text)
+
+        # Stockage des métadonnées
+        dictionnaire_Prescription = {
+            "Prescription": prescription
+        }
+        print(dictionnaire_Prescription)
+        print("----------Fin traitement compte rendu ---------------")
+    
+
+
+
 
 

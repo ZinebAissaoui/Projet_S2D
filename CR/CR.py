@@ -21,7 +21,7 @@ def corriger_orthographe(lignes):
     return lignes_corrigees
 
 def nettoyer_ligne(ligne):
-    # Enlever les espaces blancs inutiles à la fin de la ligne
+     # Enlever les espaces blancs inutiles à la fin de la ligne
     ligne_nettoyee = ligne.strip()
     
     # Enlever les caractères non alphanumériques

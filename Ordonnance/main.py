@@ -3,7 +3,7 @@ from Data_Extraction import extract_prescription
 
 # Récupération des données à partir du fichier .txt 
 
-output_file_path = 'C:/Users/lamia/Desktop/Ordonnance/output.txt'
+output_file_path = 'Ordonnance\output.txt'
 text = None
 
 try:

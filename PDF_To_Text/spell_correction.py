@@ -1,6 +1,5 @@
 """spelling"""
 
-pip install spellchecker
 
 
 
