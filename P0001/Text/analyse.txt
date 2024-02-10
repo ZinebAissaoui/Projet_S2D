@@ -6,8 +6,8 @@ Page 1:
  4,Avenue de Paris  
  E  
  PARTHENAY (79200)  
- Laboratoire de Biologie Médicale Multi-sites  
- 62,A Avenue du Géneral de Gaulle  
+ Laboratoire de Biologie MÃ©dicale Multi-sites  
+ 62,A Avenue du GÃ©neral de Gaulle  
  wwmedlab-groupaeu  
  ST-MAIXENT (79400)  
  18, Rue del lal Tour Chabot  
@@ -19,24 +19,24 @@ Page 1:
  LE FENESTREAU  
  Examen de: : Enf (F) Pauline HOUMAULT  
  79360 BEAUVOIR SUR NIORT  
- Né(e) le: 18-07-2007 NdN: : HOUMAULT  
+ NÃ©(e) le: 18-07-2007 NdN: : HOUMAULT  
  21 imapsse de lautoroutel le fenestreau  
  79360 BEAUVOIR SURI NIORT -1 Tel:  
  Dossier No: H1510080123 du 08-10-2015  
- Prescripteur: :Dr GUERIN François  
+ Prescripteur: :Dr GUERIN FranÃ§ois  
  N'RPPS dup prescripteur:  
- Edité le 13-10-2015à 15:00  
+ EditÃ© le 13-10-2015Ã  15:00  
  Compte-rendus complet/  
- Prélevék le 08-10-2015 à08:00  
+ PrÃ©levÃ©k le 08-10-2015 Ã 08:00  
  Date del lordonnance: 07-10-2015  
- Résultats Valeurs der référence Antécedents  
+ RÃ©sultats Valeurs der rÃ©fÃ©rence AntÃ©cedents  
  HEMATOLOGIE  
- Attention, nouvelles valeurs der référence pour lal NFS et les plaquettes (classes d'ages) à compter du 01) juin 2015  
- Numération-Formule sanguine  
+ Attention, nouvelles valeurs der rÃ©fÃ©rence pour lal NFS et les plaquettes (classes d'ages) Ã  compter du 01) juin 2015  
+ NumÃ©ration-Formule sanguine  
  mpAdmsafuscpumAss: deF Flux Sysmex)  
- Hématies (GI. Rouges) : 4,86 tera/L (3,90-5,20)  
- Hémoglobine 13,5 g/di (11,0-14,0)  
- Hématocrite 39,8% (32,0-45,0)  
+ HÃ©maties (GI. Rouges) : 4,86 tera/L (3,90-5,20)  
+ HÃ©moglobine 13,5 g/di (11,0-14,0)  
+ HÃ©matocrite 39,8% (32,0-45,0)  
  VGM 81,9fl (71,0-87,0)  
  TCMH 27,8 pg (24,0-30,0)  
  CCMH 33,9 g/di (32,0-36,0)  
@@ -48,7 +48,7 @@ Page 1:
  Monocytes 7,5% 0,53 giga/L (0,20-1,00)  
  Plaquettes 298 giga/L (150-450)  
  mpAaraPhepyomene deF Flux Sysmex)  
- Editiony validée par  
+ Editiony validÃ©e par  
  ErcBOTTOS  
  Biologistes co-responsables: EBaillargeau: G.E Boizard- EBottos AButraud- MChaaban-  
  F.Gerson- BLelong- C.Michaud- J-F.You-  

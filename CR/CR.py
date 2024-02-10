@@ -2,7 +2,7 @@ from spellchecker import SpellChecker
 from unidecode import unidecode
 import re 
 def open_file_txt(chemin_du_fichier):
-    with open(chemin_du_fichier, "r", encoding="windows-1252") as fichier_entree:
+    with open(chemin_du_fichier, "r", encoding="UTF-8") as fichier_entree:
         # Lisez le contenu du fichier
         lignes = fichier_entree.readlines()
     return lignes

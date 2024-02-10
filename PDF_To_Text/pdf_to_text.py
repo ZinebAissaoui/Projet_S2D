@@ -37,7 +37,7 @@ class Extraction :
         self.image=DocumentFile.from_pdf(image)
         #self.image=DocumentFile.from_images(image)      #si c'est Image
     def predict(self) : #Pour faire la prédiction
-        model = ocr_predictor(det_arch='db_resnet50', reco_arch='crnn_vgg16_bn', pretrained=True)
+        model = ocr_predictor(det_arch='db_resnet50', reco_arch='crnn_vgg16_bn', pretrained=True,)
         result = model(self.image)
         return result
     def confiance(self):
@@ -104,7 +104,7 @@ class Extraction :
         return lignes
 
     def export_lignes(self, nom_fichier):
-        text_file = open(nom_fichier, "w")
+        text_file = open(nom_fichier, "w",encoding="UTF-8")
         lignes = self.extract_rows()
         for i, lignes_page in enumerate(lignes):
             text_file.write(f"Page {i+1}:\n")

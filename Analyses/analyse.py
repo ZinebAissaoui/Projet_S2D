@@ -56,10 +56,11 @@ import os
 import pickle
 
 def load_pickle(file):
-    pick_file = open(file+".pkl", "rb")
+    pick_file = open("Analyses\\"+file+".pkl", "rb")
     data = pickle.load(pick_file)
     pick_file.close()
     return data
+
 
 
 def predict_entities2(sentence, crf_model):
@@ -152,7 +153,7 @@ def correcte(v,min,max):
         return("pas correcte")
 
 
-def dict_analyse(outputtxt):
+def dict_analyse1(outputtxt):
     with open(outputtxt, 'r') as file:
         # Lire chaque ligne du fichier
         for line in file:
@@ -174,3 +175,50 @@ def dict_analyse(outputtxt):
 
                     except:
                         pass
+
+
+def dict_analyse(outputtxt):
+    # Création d'un dictionnaire pour stocker les valeurs
+    values_dict = []
+
+    with open(outputtxt, 'r') as file:
+        # Lire chaque ligne du fichier
+        for line in file:
+            # Appliquer le traitement si la ligne n'est pas vide
+            if line.strip():
+                result = process_sentence(line, crf_model)
+
+                if result:
+                    try:
+                        c, n, min_val, max_val = extract_values_from_sentence(line)
+                        valeur = find_first_number(n)
+                        if valeur:
+                            if min_val:
+                                if len(c)>1:
+                                    values_dict.append({
+                                        "intituleAnalyse": ' '.join(c[:-1]),
+                                        "Valeur d'analyse": valeur,
+                                        "decisionanalyse": correcte(valeur, min_val, max_val)
+                                    })
+                                    #print(f"intituleAnalyse: {' '.join(c[:-1])}, Valeur d'analyse: {valeur}, decisionanalyse:{correcte(valeur, min_val, max_val)}")
+                                else:
+                                    values_dict.append({
+                                        "intituleAnalyse": ' '.join(c),
+                                        "Valeur d'analyse": valeur,
+                                        "decisionanalyse": correcte(valeur, min_val, max_val)
+                                    })
+                                    #print(f"intituleAnalyse: {' '.join(c)}, Valeur d'analyse: {valeur}, decisionanalyse:{correcte(valeur, min_val, max_val)}")
+
+
+                    except Exception as e:
+                        print(f"An error occurred: {e}")
+                        pass
+    return values_dict
+
+    #print(values_dict)
+
+
+
+
+
+                    
