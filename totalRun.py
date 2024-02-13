@@ -2,12 +2,14 @@
 import os
 import json
 from PDF_To_Text.pdf_to_text import Extraction
+from PDF_To_Text.pdfnative_to_text import extract_text_from_pdfplumber,save_text_to_file
 from CR.CR import extraction_CR_main
 from Ordonnance.Data_Extraction import extract_prescription
 from FichePatient.fichepatient import extract_personal_info
-from Analyses.analyse import dict_analyse
+from Analyses.analysecopy  import analyse
 from JsonsLoad.RemplirJson import patient_Json, consultations_Json
-
+from PDF_To_Text.native_or_scaned import is_scanned_pdf
+from Moteur_de_recherche.Embeddings import embedding
 #extracteur=Extraction("C:\Users\zaiss\OneDrive\Documents\GitHub\Projet_S2D\P0001\PDF\CRradio.pdf") # Insérer le nom de pdf, avant fait glisser le document dans la zone fichier à gauche
 #export_lignes_fichier = extracteur.export_lignes("C:\Users\zaiss\OneDrive\Documents\GitHub\Projet_S2D\P0001\Text\CRradio.txt")
 
@@ -19,24 +21,29 @@ input_directory = r"C:\\Users\\zaiss\\OneDrive\\Documents\\GitHub\\Projet_S2D\\P
 
 # Répertoire de sortie pour les fichiers texte
 output_directory = r"C:\\Users\\zaiss\\OneDrive\\Documents\\GitHub\\Projet_S2D\\P0001\\Text\\"
-print("######### Etape 1: Traitement OCR ################")
+print("######### Etape 1: PDF to Text ################")
 
 # Parcours de tous les fichiers dans le répertoire d'entrée
 for filename in os.listdir(input_directory):
     if filename.endswith(".pdf"):
         # Création du chemin complet pour le fichier PDF
         pdf_filepath = os.path.join(input_directory, filename)
-
+            
         # Création du nom de fichier pour le fichier texte
         txt_filename = os.path.splitext(filename)[0] + ".txt"
         txt_filepath = os.path.join(output_directory, txt_filename)
-
+        # si le document est scanné
+        if is_scanned_pdf(pdf_filepath):
         # Création de l'instance de la classe Extraction
-        extracteur = Extraction(pdf_filepath)
+            extracteur = Extraction(pdf_filepath)
+            extracteur.export_lignes(txt_filepath)
+        else:
+             extracteur= extract_text_from_pdfplumber(pdf_filepath)
+             save_text_to_file(extracteur,txt_filepath)
 
         # Exportation des lignes dans le fichier texte
-        extracteur.export_lignes(txt_filepath)
-print("######### Fin OCR ################")
+        
+print("######### PDF To Text ################")
 print("######### Etape 2 : Extraction des données  ################")
 
 for filename in os.listdir(output_directory):
@@ -80,7 +87,7 @@ for filename in os.listdir(output_directory):
         
         print(prescription)
         print("----------Fin traitement prescription ---------------")
-    if "analyses" in filename.lower():
+    if "analyse" in filename.lower():
         print("----------début traitement Analyse ----------------")
         output_file_path=os.path.join(output_directory, filename) 
         text = None
@@ -93,7 +100,7 @@ for filename in os.listdir(output_directory):
         except Exception as e:
             print(f"An error occurred: {e}")
 
-        listes_analyses=dict_analyse(output_file_path)
+        listes_analyses=analyse(output_file_path)
         print(listes_analyses)
         print("----------Fin traitement analyse ---------------")
 print("######### Etape 3 : Ajout au fichier JSON ################")
@@ -107,7 +114,7 @@ consultations_Json(consultations_Json_path,listes_analyses,dict_CR,idpatient,idm
 
 patient_Json(patient_Json_path, personal_info)
 
-
-
-
+print("######### Etape 4 : Embeddings ################")
+path_consultation="C:/Users/zaiss/OneDrive/Documents/GitHub/Projet_S2D/JSONs/Consultations.Json"
+embedding(path_consultation)
 

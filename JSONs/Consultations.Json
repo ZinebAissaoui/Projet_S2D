@@ -15,38 +15,39 @@
       "Nombrededocuments": 3,
       "Analyses": [
         {
-          "intituleAnalyse": "volume globulaire moyen",
-          "Valeur d'analyse": 49.0,
+          "Valeur d'analyse": [
+            "7.08"
+          ],
+          "intituleAnalyse": [
+            "leucocytes"
+          ],
           "decisionanalyse": "Correcte"
         },
         {
-          "intituleAnalyse": "Index",
-          "Valeur d'analyse": 18.0,
-          "decisionanalyse": "pas correcte"
-        },
-        {
-          "intituleAnalyse": "Leucocytes",
-          "Valeur d'analyse": 4980.0,
-          "decisionanalyse": "pas correcte"
-        },
-        {
-          "intituleAnalyse": "Neutrophies",
-          "Valeur d'analyse": 64.0,
+          "Valeur d'analyse": [
+            "2.25"
+          ],
+          "intituleAnalyse": [
+            "lymphocytes"
+          ],
           "decisionanalyse": "Correcte"
         },
         {
-          "intituleAnalyse": "Lymphocytes",
-          "Valeur d'analyse": 30.0,
+          "Valeur d'analyse": [
+            "0.53"
+          ],
+          "intituleAnalyse": [
+            "monocytes"
+          ],
           "decisionanalyse": "Correcte"
         },
         {
-          "intituleAnalyse": "Lymphocytes",
-          "Valeur d'analyse": 1494.0,
-          "decisionanalyse": "pas correcte"
-        },
-        {
-          "intituleAnalyse": "Thrombocytes",
-          "Valeur d'analyse": 362.0,
+          "Valeur d'analyse": [
+            "298"
+          ],
+          "intituleAnalyse": [
+            "plaquettes"
+          ],
           "decisionanalyse": "Correcte"
         }
       ],
