@@ -1,6 +1,8 @@
 # Extraction, Reconnaissance et Recherche dans les Dossiers Médicaux
 
 Ce code a été élaboré dans le but d'automatiser la gestion des dossiers médicaux en effectuant l'extraction du texte, la reconnaissance des entités nommées, et en permettant une recherche précise au sein des documents.
+![Uploading image.png…]()
+
 
 ## Fonctionnement du Code
 
