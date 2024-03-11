@@ -1,6 +1,8 @@
 # Extraction, Reconnaissance et Recherche dans les Dossiers Médicaux
 
 Ce code a été élaboré dans le but d'automatiser la gestion des dossiers médicaux en effectuant l'extraction du texte, la reconnaissance des entités nommées, et en permettant une recherche précise au sein des documents.
+![image](https://github.com/ZinebAissaoui/Projet_S2D/assets/150697197/793232e6-b839-4d6f-9142-f6036ff8d7de)
+
 
 ## Fonctionnement du Code
 
